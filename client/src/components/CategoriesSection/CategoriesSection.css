@@ -1,0 +1,28 @@
+.categories{
+  padding: 60px 20px;
+}
+
+.categories h2{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.categories-list{
+  display: flex;
+	justify-content: center;
+	gap: 20px;
+	flex-wrap: wrap;
+}
+
+.category-card{
+	padding: 20px;
+	border: 1px solid #eee;
+	transition: 0.3s;
+	border-radius: 10px;
+	min-width: 120px;
+	text-align: center;
+}
+
+.category-card:hover{
+	background-color: #ff6b00;
+}

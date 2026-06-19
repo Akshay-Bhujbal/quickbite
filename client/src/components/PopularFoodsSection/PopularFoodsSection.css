@@ -1,0 +1,25 @@
+.popular-foods{
+  padding: 60px 20px;
+  background-color: #f8f8f8;
+}
+
+.popular-foods h2{
+	text-align: center;
+	margin-bottom: 40px;
+}
+
+.food-list{
+	display: flex;
+	gap: 20px;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.food-card{
+	width: 200px;
+	border: 1px solid #ddd;
+	padding: 20px;
+	border-radius: 10px;
+	text-align: center;
+
+}

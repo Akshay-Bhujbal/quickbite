@@ -2,13 +2,32 @@
 	padding: 40px;
 }
 
-.menu-page h1{
-	margin-bottom: 30px;
+
+
+.menu-page input{
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	margin-top: 10px;
 }
 
 .food-grid {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-
 	gap: 20px;
+}
+
+.menu-categories{
+	display: flex;
+	gap: 10px;
+	margin: 30px 0;
+}
+
+.menu-categories button{
+	padding: 10px 18px;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: #f3f4f6;
 }

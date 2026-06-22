@@ -1,6 +1,19 @@
 import "./FoodCard.css"
+import { addToCart } from "../../services/cartService";
+
 
 function FoodCard( {food} ) {
+
+	const handleAddToCart = async () => {
+		try {
+			const response = await addToCart(food._id, 1);
+			
+			alert(response.message);
+		} catch (error) {
+			console.log(error);
+		}
+	};
+
   return (
     <div className='food-card'>
 			<div className='food-image'>
@@ -13,7 +26,9 @@ function FoodCard( {food} ) {
 
 			<h4>{food.price}</h4>
 
-			<button>Add to Cart</button>
+			<button onClick={handleAddToCart}>
+				Add to Cart
+			</button>
     </div>
   )
 }

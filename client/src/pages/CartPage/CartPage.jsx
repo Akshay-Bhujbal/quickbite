@@ -5,10 +5,14 @@ import {
    removeCartItem,
   } from '../../services/cartService';
 
+import { placeOrder } from '../../services/orderService';
+
 import "./CartPage.css"
 
 function CartPage() {
   const [cart, setCart] = useState(null) 
+
+  const [address, setAddress] = useState("");
 
   useEffect(() => {
     fetchCart();
@@ -47,6 +51,25 @@ function CartPage() {
     }
   };
 
+
+  const handlePlaceOrder = async () => {
+    try {
+      const totalAmount = cart.items.reduce(
+        ( total, item) => 
+          total + item.foodId.price * item.quantity, 0
+      );
+
+      const response = await placeOrder({address, totalAmount,});
+
+      alert(response.message);
+
+      fetchCart();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
   return (
     <div className='cart-page'>
       <h1>Cart</h1>
@@ -60,32 +83,56 @@ function CartPage() {
 
             <p>Quantity: {item.quantity}</p>
 
-            <button 
-              onClick={ () => handleQuantityChange(
-                item.foodId._id,
-                item.quantity - 1
-                )
-              }
-            >
-              -
-            </button>
+            <div className='cart-buttons'>
+              <button 
+                onClick={ () => handleQuantityChange(
+                  item.foodId._id,
+                  item.quantity - 1
+                  )
+                }
+              >
+                -
+              </button>
 
-            <button 
-              onClick={ () => handleQuantityChange(
-                item.foodId._id,
-                item.quantity + 1
-                )
+              <button 
+                onClick={ () => handleQuantityChange(
+                  item.foodId._id,
+                  item.quantity + 1
+                  )
+                }
+              >
+                +
+              </button>
+
+              <button
+                onClick={ () => handleRemove(
+                  item.foodId._id
+                )}
+              >
+                Remove
+              </button>
+            </div>
+
+            <h2>
+              Total: ₹{cart?.items?.reduce(
+                (total, item) => 
+                  total + item.foodId.price * item.quantity, 0
+              )}
+            </h2>
+            
+            <input
+              type="text" 
+              placeholder='Enter Address'
+              value={address}
+              onChange={(e) =>
+                setAddress(e.target.value)
               }
-            >
-              +
-            </button>
+            />
 
             <button
-              onClick={ () => handleRemove(
-                item.foodId._id
-              )}
+              onClick={handlePlaceOrder}
             >
-              Remove
+              Place Order
             </button>
 
           </div>

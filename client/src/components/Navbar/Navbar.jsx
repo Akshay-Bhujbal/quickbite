@@ -11,6 +11,7 @@ function Navbar() {
       <div className="nav-links">
         <Link to="/menu">Menu</Link>
 			  <Link to="/cart">Cart</Link>
+        <Link to="/orders">Orders</Link>
 			  <Link to="/login">Login</Link>
       </div>
     </nav>

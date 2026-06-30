@@ -1,0 +1,23 @@
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 220px;
+  min-height: 100vh;
+  padding: 20px;
+  background: #1f2937;
+}
+
+.sidebar h2{
+  color: white;
+}
+
+.sidebar a{
+	color: white;
+	text-decoration: white;
+	cursor: pointer;
+}
+
+.sidebar a:hover{
+	color: #ff6b00; 
+}

@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+}
+
+.admin-layout{
+  display: flex;
+  margin: 0;
+}
+
+.main{
+	.main{
+		flex: 1;
+		padding: 20px;
+	}
+}

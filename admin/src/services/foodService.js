@@ -6,6 +6,18 @@ export const getAllFoods = async () => {
 	return await response.json();
 };
 
+export const addFood = async (formData) => {
+	const response = await fetch(
+		`${API_URL}/add`,
+		{
+			method: "POST",
+			body: formData,
+		}
+	);
+
+	return await response.json();
+};
+
 export const deleteFood = async (foodId) => {
 	const response = await fetch(
 		`${API_URL}/delete/${foodId}`,

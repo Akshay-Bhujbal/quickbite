@@ -1,0 +1,57 @@
+.add-food-page{
+	max-width: 650px;
+	margin: 20px 20px;
+	background-color: #ffffff;
+	padding: 30px;
+	border-radius: 12px;
+	box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.add-food-page h1{
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.add-food-page form{
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.form-group{
+	display: flex;
+	flex-direction: column;
+}
+
+.form-group label{
+	font-weight: 600;
+	margin-bottom: 8px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+	padding: 12px;
+	border: 1px solid #dcdcdc;
+	border-radius: 8px;
+	font-size: 16px;
+	outline: none;
+}
+
+.form-group textarea{
+	resize: vertical;
+}
+
+.add-food-page button{
+	padding: 14px;
+	border: none;
+	border-radius: 8px;
+	background: #ff6b35;
+	color: white;
+	font-size: 16px;
+	cursor: pointer;
+}
+
+.add-food-page button:hover{
+	background: #e85d2d;
+}

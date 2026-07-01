@@ -52,7 +52,7 @@ function FoodsPage() {
 
           <p>₹{food.price}</p>
 
-          <button onClick={handleDelete(food._id)}>
+          <button onClick={() => handleDelete(food._id)}>
             Delete
           </button>
 

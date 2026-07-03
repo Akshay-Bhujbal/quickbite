@@ -28,3 +28,14 @@ export const deleteFood = async (foodId) => {
 
 	return await response.json();
 }
+
+
+export const getFoodById = async (foodId) => {
+	const response = await fetch(
+		`${API_URL}/all`
+	);
+
+	const foods = await response.json()
+
+	return foods.find((food) => food._id === foodId)
+}

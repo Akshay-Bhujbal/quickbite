@@ -1,6 +1,8 @@
 import React from 'react'
 import { useState, useEffect} from 'react'
 import { deleteFood, getAllFoods } from '../../services/foodService';
+import "./FoodPage.css"
+import {Link} from "react-router-dom"
 
 function FoodsPage() {
   const [foods, setFoods] = useState([]);
@@ -40,24 +42,31 @@ function FoodsPage() {
   }
  
   return (
-    <div>
+    <div className='food-management'>
       <h1>Food Management</h1>
 
-      {foods.map((food) => (
-        <div key={food._id} >
+      <div className='food-list'>
+        {foods.map((food) => (
+          <div className='food-item' key={food._id} >
 
-          <h3>{food.title}</h3>
+            <h3>{food.title}</h3>
 
-          <p>{food.category}</p>
+            <p>{food.category}</p>
 
-          <p>₹{food.price}</p>
+            <p>₹{food.price}</p>
 
-          <button onClick={() => handleDelete(food._id)}>
-            Delete
-          </button>
+            <Link to={`/edit-food/${food._id}`}>
+              <button>Edit</button>
+            </Link>
 
-        </div>
-      ))}
+            <button onClick={() => handleDelete(food._id)}>
+              Delete
+            </button>
+
+          </div>
+        ))}
+      </div>
+      
     </div>
   )
 }

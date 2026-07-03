@@ -1,0 +1,49 @@
+.food-management{
+  padding: 30px;
+}
+
+.food-management h1{
+	margin-bottom: 25px;
+	text-align: center;
+}
+
+.food-list{
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 20px;
+}
+
+.food-item{
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 12px;
+	padding: 20px;
+	box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.food-item h3{
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.food-item p{
+	margin: 8px 0;
+	color: #444;
+}
+
+.food-item button{
+	width: 100%;
+	margin-top: 15px;
+	padding: 10px;
+	border: none;
+	border-radius: 8px;
+	background-color: #ef4444;
+	color: white;
+	font-size: 15px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.food-item button:hover{
+	background-color: #dc2626;
+}

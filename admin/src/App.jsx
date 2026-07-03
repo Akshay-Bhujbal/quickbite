@@ -5,6 +5,7 @@ import Dashboard from './pages/DashboardPage/Dashboard'
 import FoodsPage from './pages/FoodsPage/FoodsPage'
 import AddFoodPage from './pages/AddFoodPage/AddFoodPage'
 import OrdersPage from './pages/OrdersPage/OrdersPage'
+import EditFoodPage from './pages/EditFoodPage/EditFoodPage'
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='/foods' element={<FoodsPage />} />
           <Route path='/add-food' element={<AddFoodPage />} />
           <Route path='/orders' element={<OrdersPage />} />
+          <Route path="edit-food/:id" element={<EditFoodPage />} />
         </Route>
 
       </Routes>

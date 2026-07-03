@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
-import { useParams } from "react-router-dom";
-import { getFoodById } from '../../services/foodService';
+import { useParams, useNavigate } from "react-router-dom";
+import { getFoodById, updateFood } from '../../services/foodService';
+
 
 function EditFoodPage() {
   const { id } = useParams();
+  const navigate = useNavigate();
+
   const categories = [
     "Burger",
     "Pizza",
@@ -51,10 +54,18 @@ function EditFoodPage() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(formData);
+    try {
+      const response = await updateFood(id, formData);
+
+      alert(response.message);
+
+      navigate("/foods")
+    } catch (error) {
+      console.log(error)
+    }
   };
 
   return (

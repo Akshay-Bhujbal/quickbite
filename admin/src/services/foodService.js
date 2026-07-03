@@ -39,3 +39,21 @@ export const getFoodById = async (foodId) => {
 
 	return foods.find((food) => food._id === foodId)
 }
+
+
+export const updateFood = async (foodId, updatedFood) => {
+	const response = await fetch(
+		`${API_URL}/update/${foodId}`,
+		{
+			method: "PUT",
+
+			headers: {
+				"content-type": "application/json",
+			},
+
+			body: JSON.stringify(updatedFood),
+		}
+	);
+
+	return await response.json();
+};
